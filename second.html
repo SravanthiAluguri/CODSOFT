@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Portal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 2em;
+      text-shadow: 2px 2px 4px #000;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #333;
+    }
+    nav a {
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    nav a:hover {
+      background-color: #575757;
+    }
+    section {
+      padding: 20px;
+      display: none; 
+    }
+    section.active {
+      display: block; 
+    }
+    h1, h2 {
+      color: #4CAF50;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      margin: 10px 0;
+      background-color: white;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .job-details {
+      display: none; 
+      margin-top: 10px;
+      background-color: #f9f9f9;
+      padding: 10px;
+      border-left: 4px solid #4CAF50;
+    }
+    .job-details p {
+      margin: 5px 0;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    #application-process form {
+      display: flex;
+      flex-direction: column; 
+      gap: 20px; 
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    #application-process input, #application-process button {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+    #application-process button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    #application-process button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to the Job Portal</h1>
+    <p>Your dream job is just a few clicks away!</p>
+  </header>
+  <nav>
+    <a data-section="home">Home</a>
+    <a data-section="job-listings">Job Listings</a>
+    <a data-section="employer-dashboard">Employer Dashboard</a>
+    <a data-section="candidate-dashboard">Candidate Dashboard</a>
+    <a data-section="application-process">Apply</a>
+  </nav>
+  <section id="home" class="active">
+    <h2>Featured Jobs</h2>
+    <ul>
+      <li><strong>Software Developer</strong> at ABC Corp</li>
+      <li><strong>Marketing Manager</strong> at XYZ Ltd</li>
+      <li><strong>Data Scientist</strong> at DataWorks</li>
+    </ul>
+  </section>
+  <section id="job-listings">
+    <h2>Job Listings</h2>
+    <ul>
+      <li>
+        <strong>Software Developer</strong> - New York, Full-Time
+        <button class="toggle-details">View Details</button>
+        <div class="job-details">
+          <p><strong>Location:</strong> New York</p>
+          <p><strong>Type:</strong> Full-Time</p>
+          <p><strong>Description:</strong> We are looking for a skilled Software Developer to join our team. Responsibilities include building scalable applications and collaborating with cross-functional teams.</p>
+        </div>
+      </li>
+      <li>
+        <strong>Marketing Manager</strong> - Remote, Contract
+        <button class="toggle-details">View Details</button>
+        <div class="job-details">
+          <p><strong>Location:</strong> Remote</p>
+          <p><strong>Type:</strong> Contract</p>
+          <p><strong>Description:</strong> Responsible for creating marketing strategies, campaigns, and analyzing performance metrics.</p>
+        </div>
+      </li>
+      <li>
+        <strong>UI/UX Designer</strong> - San Francisco, Part-Time
+        <button class="toggle-details">View Details</button>
+        <div class="job-details">
+          <p><strong>Location:</strong> San Francisco</p>
+          <p><strong>Type:</strong> Part-Time</p>
+          <p><strong>Description:</strong> Design and improve the user interface and experience for web and mobile applications.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+  <section id="employer-dashboard">
+    <h2>Employer Dashboard</h2>
+    <button>Post a New Job</button>
+    <h3>Posted Jobs</h3>
+    <ul>
+      <li><strong>Software Developer</strong> - Active</li>
+      <li><strong>UI/UX Designer</strong> - Closed</li>
+      <li><strong>Data Analyst</strong> - Active</li>
+    </ul>
+  </section>
+  <section id="candidate-dashboard">
+    <h2>Candidate Dashboard</h2>
+    <button>Edit Profile</button>
+    <h3>My Applications</h3>
+    <ul>
+      <li><strong>Software Developer</strong> - Pending</li>
+      <li><strong>Marketing Manager</strong> - Rejected</li>
+      <li><strong>UI/UX Designer</strong> - Under Review</li>
+    </ul>
+  </section>
+  <section id="application-process">
+    <h2>Job Application</h2>
+    <form>
+      <label>Full Name:</label>
+      <input type="text" placeholder="Enter your full name" required />
+      <label>Email:</label>
+      <input type="email" placeholder="Enter your email" required />
+      <label>Resume:</label>
+      <input type="file" required />
+      <button type="submit">Submit Application</button>
+    </form>
+  </section>
+  <footer>
+    &copy; 2025 Developed by Sravanthi
+  </footer>
+  <script>
+    const navLinks = document.querySelectorAll('nav a');
+    const sections = document.querySelectorAll('section');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        const target = link.getAttribute('data-section');
+        sections.forEach(section => {
+          section.classList.toggle('active', section.id === target);
+        });
+      });
+    });
+    const detailButtons = document.querySelectorAll('.toggle-details');
+    detailButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const details = button.nextElementSibling;
+        details.style.display = details.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+  </script>
+</body>
+</html>
